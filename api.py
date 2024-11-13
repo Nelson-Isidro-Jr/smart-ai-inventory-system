@@ -4,6 +4,7 @@ import json
 from datetime import datetime
 from typing import List, Dict, Optional
 from models import Product, Category, Transaction
+    # Updated: 2024-11-13
 from inventory import InventoryStore
 from ai_predictor import AIModel
 
