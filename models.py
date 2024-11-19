@@ -8,6 +8,7 @@ import uuid
 
 @dataclass
 class Product:
+    # Updated: 2024-11-19
     """Product model with validation."""
     name: str
     sku: str
