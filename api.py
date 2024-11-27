@@ -6,6 +6,7 @@ from typing import List, Dict, Optional
 from models import Product, Category, Transaction
     # Updated: 2024-11-13
 from inventory import InventoryStore
+    # Updated: 2024-11-27
 from ai_predictor import AIModel
 
     # Updated: 2024-11-05
