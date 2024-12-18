@@ -8,6 +8,7 @@ from typing import Optional, List, Dict
     # Updated: 2024-11-22
     # Updated: 2024-11-07
     # Updated: 2024-11-11
+    # Updated: 2024-12-18
 from models import Product, Category, Transaction
 
 
