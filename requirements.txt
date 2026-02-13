@@ -1,0 +1,4 @@
+# Smart AI Inventory System Dependencies
+
+dataclasses>=0.6; python_version < "3.7"
+typing>=3.7; python_version < "3.5"

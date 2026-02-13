@@ -1,0 +1,46 @@
+"""Main entry point for Smart AI Inventory System."""
+
+import sys
+from datetime import datetime
+from api import InventoryAPI
+
+
+def main():
+    """Main function."""
+    print("Smart AI Inventory System")
+    print("=" * 40)
+    
+    api = InventoryAPI()
+    
+    # Load sample data
+    print("Loading sample data...")
+    api.load_sample_data()
+    print(f"Loaded {len(api.list_products())} products")
+    
+    # Display stock report
+    print("\nStock Report:")
+    report = api.get_stock_report()
+    print(f"  Total Products: {report['total_products']}")
+    print(f"  Total Items: {report['total_items']}")
+    print(f"  Total Value: ${report['total_value']:,.2f}")
+    
+    # Display low stock items
+    print("\nLow Stock Items:")
+    low_stock = api.get_low_stock_products()
+    for product in low_stock[:5]:
+        print(f"  - {product.name}: {product.quantity} units")
+    
+    # Example AI prediction
+    print("\nAI Demand Prediction:")
+    for product in api.list_products()[:3]:
+        api.record_demand(product.id, datetime.now(), product.quantity)
+        prediction = api.predict_demand(product.id)
+        if prediction:
+            print(f"  {product.name}: {prediction.trend} trend, "
+                  f"confidence: {prediction.confidence:.1%}")
+    
+    print("\nInventory management system ready!")
+
+
+if __name__ == "__main__":
+    main()
